@@ -15,8 +15,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
-import com.kotlin.demo.two.KotlinZegoApplication
 import com.kotlin.demo.two.R
 import com.kotlin.demo.two.bean.RoomInfo
 import com.kotlin.demo.two.view.SinglePlayerAcivity
@@ -25,8 +23,6 @@ import com.kotlin.demo.two.widget.CirImageView
 import com.kotlin.demo.two.widget.SpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_roomlist.*
 import org.jetbrains.anko.sdk23.listeners.onClick
-import org.jetbrains.anko.support.v4.UI
-import org.jetbrains.anko.view
 
 /**
  * Created by my on 2018/06/13 0013.
@@ -84,7 +80,6 @@ class RoomListFragment : Fragment() {
         srl.setOnRefreshListener {
             // 下拉刷新, 数据清零
             list.clear()
-
             viewModel.getRoomList(activity.applicationContext)
         }
         mListRoomAdapter?.setOnItemClickListener(object : ListRoomAdapter.OnItemClickListener {

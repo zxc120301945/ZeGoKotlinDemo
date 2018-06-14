@@ -1,6 +1,9 @@
 package com.kotlin.demo.two.util
 
+import android.text.TextUtils
+import com.kotlin.demo.two.widget.ViewLive
 import com.zego.zegoliveroom.constants.ZegoBeauty
+import java.util.*
 
 /**
  * Created by my on 2018/06/13 0013.
@@ -58,4 +61,5 @@ object ZegoRoomUtil {
 
         return beauty
     }
+
 }
