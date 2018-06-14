@@ -1,0 +1,9 @@
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+    <string name="app_name">My Application</string>
+    <string name="make_a_title">给直播取一个吸引人的标题</string>
+    <string name="go_publish">开始直播</string>
+    <string name="sdk_version">SDK:</string>
+    <string name="live_quality">Quality:&#160;<xliff:g id="value">%1$s</xliff:g></string>
+    <string name="share">Share</string>
+
+</resources>

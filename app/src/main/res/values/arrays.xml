@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="navigation_bar_titles">
+        <item>房间列表</item>
+        <item>发布直播</item>
+        <item>设置</item>
+    </string-array>
+
+</resources>

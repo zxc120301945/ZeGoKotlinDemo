@@ -1,0 +1,44 @@
+ext {
+    def ankoVersion = "0.10.1"
+    def lifecycle = '1.0.0'
+    def androidSupportPkgVersion = '26.1.0'
+    def retorfit_version = "2.3.0"
+    def okhttp_version = "3.8.1"
+    def rxjava_version = "2.1.0"
+    def rxandroid_version = "2.0.1"
+    def fastJsonVersion = '1.1.57.android'
+
+    dependencies = [
+            //anko相关
+            ANKO                   : "org.jetbrains.anko:anko-sdk23:$ankoVersion",
+            ANKOLISTENER           : "org.jetbrains.anko:anko-sdk23-listeners:$ankoVersion",
+            ANKO_RECYCLERVIEW      : "org.jetbrains.anko:anko-recyclerview-v7:$ankoVersion",
+            ANKO_CARDVIEW          : "org.jetbrains.anko:anko-cardview-v7:$ankoVersion",
+            ANKO_GRIDLAYOUT        : "org.jetbrains.anko:anko-gridlayout-v7:$ankoVersion",
+            ANKO_DESIGN            : "org.jetbrains.anko:anko-design:$ankoVersion",
+            ANKO_SUPPORT_V4_COMMOMS: "org.jetbrains.anko:anko-support-v4-commons:$ankoVersion",
+            ANKO_SUPPORT_V4        : "org.jetbrains.anko:anko-support-v4:$ankoVersion",
+            ANKO_APPCOMPAT_V7      : "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion",
+
+            RXLIFECYCLE_KOTLIN : 'com.trello.rxlifecycle2:rxlifecycle-kotlin:2.1.0',
+            RXLIFECYCLE_COMPONENTS : 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0',
+            //lifecycle  extensions
+            LIFECYCLE_EXTENSION:"android.arch.lifecycle:extensions:$lifecycle",
+
+            RECYCLERVIEW_V7 : "com.android.support:recyclerview-v7:$androidSupportPkgVersion",
+            CARDVIEW:"com.android.support:cardview-v7:$androidSupportPkgVersion",
+
+
+            //网络相关
+            RETROFIT : "com.squareup.retrofit2:retrofit:$retorfit_version",
+            ADAPTER_RXJAVA2 : "com.squareup.retrofit2:adapter-rxjava2:$retorfit_version",
+            OKHTTP : "com.squareup.okhttp3:okhttp:$okhttp_version",
+            RXJAVA : "io.reactivex.rxjava2:rxjava:$rxjava_version",
+            RXANDROID:"io.reactivex.rxjava2:rxandroid:$rxandroid_version",
+            FASTJSON : "com.alibaba:fastjson:$fastJsonVersion",
+
+            GSON : "com.google.code.gson:gson:2.7",
+            Volley : "eu.the4thfloor.volley:com.android.volley:2015.05.28"
+
+    ]
+}

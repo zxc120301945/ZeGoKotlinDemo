@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.kotlin.demo.two"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi-v7a', 'x86'//, 'arm64-v8a', 'armeabi'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs', 'bizlibs', 'zegovideofilterlibs']
+        }
+    }
+}
+
+//解决Android Studio Conflict with dependency 'com.android.support:support-annotations'报错
+//Error:Execution failed for task ':app:preDebugAndroidTestBuild'.
+//Conflict with dependency 'com.android.support:support-annotations' in project ':app'. Resolved versions for app (26.1.0) and test app (27.1.1) differ. See https://d.android.com/r/tools/test-apk-dependency-conflicts.html for details.
+
+configurations.all {
+    resolutionStrategy.force 'com.android.support:support-annotations:27.1.1'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile rootProject.ext.dependencies["ANKOLISTENER"]
+    compile rootProject.ext.dependencies["ANKO"]
+    compile rootProject.ext.dependencies["ANKO_RECYCLERVIEW"]
+    compile rootProject.ext.dependencies["ANKO_CARDVIEW"]
+    compile rootProject.ext.dependencies["ANKO_GRIDLAYOUT"]
+    compile rootProject.ext.dependencies["ANKO_DESIGN"]
+    compile rootProject.ext.dependencies["ANKO_SUPPORT_V4"]
+    compile rootProject.ext.dependencies["ANKO_SUPPORT_V4_COMMOMS"]
+    compile rootProject.ext.dependencies["ANKO_APPCOMPAT_V7"]
+    compile rootProject.ext.dependencies["RXLIFECYCLE_KOTLIN"]
+    compile rootProject.ext.dependencies["RXLIFECYCLE_COMPONENTS"]
+    compile rootProject.ext.dependencies["LIFECYCLE_EXTENSION"]
+    compile rootProject.ext.dependencies["RECYCLERVIEW_V7"]
+    compile rootProject.ext.dependencies["RETROFIT"]
+    compile rootProject.ext.dependencies["ADAPTER_RXJAVA2"]
+    compile rootProject.ext.dependencies["OKHTTP"]
+    compile rootProject.ext.dependencies["RXJAVA"]
+    compile rootProject.ext.dependencies["RXANDROID"]
+    compile rootProject.ext.dependencies["FASTJSON"]
+    compile rootProject.ext.dependencies["GSON"]
+    compile rootProject.ext.dependencies["Volley"]
+    compile files('libs/zegoliveroom.jar')
+    compile rootProject.ext.dependencies["CARDVIEW"]
+
+}
